@@ -30,7 +30,7 @@ function Cart() {
   const cart = fakeCart;
 
   return (
-    <div className="p-3">
+    <div className="p-4">
       <LinkButton to="/menu">&larr; Back to menu</LinkButton>
 
       <h2 className="mt-6 text-xl font-semibold">Your cart, %NAME%</h2>

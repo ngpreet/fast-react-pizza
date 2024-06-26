@@ -41,31 +41,40 @@ function CreateOrder() {
   const formErrors = useActionData();
 
   return (
-    <div>
-      <h2>Ready to order? Let's go!</h2>
+    <div className="p-4">
+      <h2 className="mb-6 text-lg font-semibold">Ready to order? Let's go!</h2>
 
       <Form method="POST">
-        <div>
-          <label>First Name</label>
-          <input type="text" name="customer" className="input" required />
+        <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-40">First Name</label>
+          <input type="text" name="customer" className="input grow" required />
         </div>
 
-        <div>
-          <label>Phone number</label>
-          <div>
-            <input type="tel" name="phone" className="input" required />
-          </div>
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
-        </div>
-
-        <div>
-          <label>Address</label>
-          <div>
-            <input type="text" name="address" className="input" required />
+        <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-40">Phone number</label>
+          <div className="grow">
+            <input type="tel" name="phone" className="input w-full" required />
+            {formErrors?.phone && (
+              <p className="mx-2 mt-1 rounded-sm bg-red-100 p-1 px-2 text-xs text-red-800">
+                {formErrors.phone}
+              </p>
+            )}
           </div>
         </div>
 
-        <div>
+        <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label className="sm:basis-40">Address</label>
+          <div className="grow">
+            <input
+              type="text"
+              name="address"
+              className="input w-full"
+              required
+            />
+          </div>
+        </div>
+
+        <div className="my-6  flex items-center gap-4">
           <input
             type="checkbox"
             name="priority"
