@@ -7,7 +7,8 @@ function Button({ children, disabled, to, type, onClick }) {
     focus:ring focus:ring-yellow-300 focus:ring-offset-1 disabled:cursor-not-allowed`;
   const styles = {
     primary: base + " px-4 py-3",
-    small: base + " px-2 py-1 text-xs",
+    small: base + " px-2.5 py-1.5 text-xs",
+    round: base + " px-2 py-1 text-sm",
     secondary: `inline-block rounded-full font-semibold uppercase text-stone-400 border-2 border-stone-300
     transition-colors duration-300 hover:bg-stone-300 hover:text-stone-600 cursor-pointer focus:bg-stone-300 focus:outline-none
     focus:ring focus:ring-stone-300 focus:ring-offset-1 disabled:cursor-not-allowed px-4 py-3`,
@@ -38,6 +39,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   to: PropTypes.string,
   type: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Button;
